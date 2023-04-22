@@ -25,8 +25,8 @@ echo ""
 
 #Functions
 fluxion() {
-      chmod +x /home/heck/fluxion/fluxion.sh
-      /home/heck/fluxion/fluxion.sh -l english
+      chmod +x ./fluxion/fluxion.sh
+      ./fluxion/fluxion.sh -l english
 }
 
 
