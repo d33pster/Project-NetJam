@@ -1,7 +1,7 @@
-#Instructions
+## Instructions
 ~ This Contains Information about how to use the Linux App
 
-#First Use
+## First Use
 1. Git Clone the Repo
 2. Cd Project-NetJam
 3. chmod +x ./installer.sh 
@@ -13,5 +13,10 @@
 5. chmod +x  <path to Project-NetJam>/Project-NetJam/netjam.sh 
 6. ./<path to Project-NetJam>/Project-NetJam/netjam.sh
 
-#Resetting the Network Drivers.
-1. run netrest.sh
+## Resetting the Network Drivers.
+1. chmod +x ./netrest.sh
+2. ./netrest.sh
+
+## Update The App
+1. chmod +x ./updater.sh
+2. ./updater.sh

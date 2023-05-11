@@ -12,10 +12,11 @@ echo "
          ░    ░  ░            ░   ░        ░  ░       ░   
                                                           
 "
-echo "Version 1.0"
+echo "Version 2.0"
 
 echo ""
 echo "1. Fluxion"
+echo "2. WebRep"
 echo ""
 
 
@@ -25,27 +26,37 @@ echo ""
 
 #Functions
 fluxion() {
-      chmod +x ./fluxion/fluxion.sh
-      ./fluxion/fluxion.sh -l english
+      sudo chmod +x ./fluxion/fluxion.sh
+      sudo ./fluxion/fluxion.sh -l english
+}
+
+webrep() {
+      sudo chmod +x ./WebRep/webrep.py
+      cd WebRep
+      sudo ./webrep.py
 }
 
 
 #conditional
 if [ "$choice" = 1 ]
 then
-airmon-ng check kill
-airmon-ng start wlan0mon
+sudo airmon-ng check kill
+sudo airmon-ng start wlan0mon
 fluxion
-service wpa_supplicant restart
-service NetworkManager restart
+sudo service wpa_supplicant restart
+sudo service NetworkManager restart
+elif [ "$choice" = 2 ]
+then
+webrep
+cd ..
 else
 echo "error"
 fi
 
 
 
-service wpa_supplicant restart
-service NetworkManager restart
+sudo service wpa_supplicant restart
+sudo service NetworkManager restart
 
 
 
