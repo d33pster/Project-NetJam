@@ -13,15 +13,19 @@ sudo git clone https://www.github.com/d33pster/WebRep.git
 #Creating NetRestarter and NetJam main files and updater
 echo "Creating NetRest..."
 sleep 2s
-echo "read -p 'Enter wifi Driver Name(check ifconfig in another terminal ~ ): ' response" > netrest.sh
-echo "sudo airmon-ng stop $response" >> netrest.sh
+cat > netrest.sh <<EOF
+read -p 'Enter wifi Driver Name(check ifconfig in another terminal ~ ): ' response
+sudo airmon-ng stop $response
+sudo service wpa_supplicant restart
+sudo service NetworkManager restart
+EOF
 sleep 0.1
-echo "sudo service wpa_supplicant restart" >> netrest.sh 
-echo "sudo service NetworkManager restart" >> netrest.sh
 echo "Creating netjam.sh..."
 sleep 2
-echo "sudo chmod +x ./main/driver.sh" > netjam.sh
-echo "sudo ./main/driver.sh" >> netjam.sh
+cat > netjam.sh <<EOF
+sudo chmod +x ./main/driver.sh
+sudo ./main/driver.sh
+EOF
 sleep 1
 echo "Creating Updater ..."
 sleep 1 

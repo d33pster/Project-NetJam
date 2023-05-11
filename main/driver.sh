@@ -12,11 +12,13 @@ echo "
          ░    ░  ░            ░   ░        ░  ░       ░   
                                                           
 "
-echo "Version 2.0"
+echo "Version 2.1"
 
 echo ""
 echo "1. Fluxion"
-echo "2. WebRep"
+echo "2. WebRep (Recon)"
+echo "..."
+echo "0. Exit"
 echo ""
 
 
@@ -49,14 +51,14 @@ elif [ "$choice" = 2 ]
 then
 webrep
 cd ..
+elif [ "$choice" = 0 ]
+then
+exit
 else
 echo "error"
 fi
 
-
-
-sudo service wpa_supplicant restart
-sudo service NetworkManager restart
+./netjam.sh
 
 
 

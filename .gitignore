@@ -1,3 +1,8 @@
+.gitignore
 dat/
 main/descriptor.txt
-main/fluxion/
+fluxion/
+WebRep/
+netjam.sh
+netrest.sh
+updater.sh
